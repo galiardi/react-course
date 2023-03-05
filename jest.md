@@ -13,3 +13,14 @@ babel.config.js:
 module.exports = {
 presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
 };
+
+jest.config.js:
+module.exports = {
+testEnvironment: "jest-environment-jsdom",
+setupFiles: ["./jest.setup.js"],
+};
+
+yarn add -D whatwg-fetch
+
+jest.setup.js:
+import 'whatwg-fetch';
