@@ -24,3 +24,7 @@ yarn add -D whatwg-fetch
 
 jest.setup.js:
 import 'whatwg-fetch';
+
+yarn add -D @testing-library/react
+
+yarn add -D jest-environment-jsdom
