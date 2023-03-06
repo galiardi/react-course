@@ -5,7 +5,7 @@ export const FirstApp = ({ title, subtitle, name }) => {
 
   return (
     <>
-      <div data-testid="test-title"> {title} </div>
+      <h1 data-testid="test-title"> {title} </h1>
       {/* <code>{ JSON.stringify( newMessage ) }</code> */}
       <p>{subtitle}</p>
       <p>{subtitle}</p>
@@ -16,11 +16,11 @@ export const FirstApp = ({ title, subtitle, name }) => {
 
 FirstApp.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string,
+  subtitle: PropTypes.string,
 };
 
 FirstApp.defaultProps = {
   name: "Fernando Herrera",
-  subTitle: "No hay subtítulo",
+  subtitle: "No hay subtítulo",
   // title: "No hay titulo",
 };
