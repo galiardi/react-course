@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from 'react-router-dom';
-import { router } from './09-useContext/router'
+// import { RouterProvider } from 'react-router-dom';
+import { MultipleCustomHooks } from "./03-examples";
+// import { router } from './09-useContext/router'
 
 import "./index.css";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+      <MultipleCustomHooks />
   </React.StrictMode>
 );
 

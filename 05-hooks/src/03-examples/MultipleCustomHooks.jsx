@@ -5,13 +5,14 @@ export const MultipleCustomHooks = () => {
   const { counter, increment, decrement } = useCounter(1);
 
   const { data, isLoading, error } = useFetch(
-    `https://www.breakingbadapi.com/api/quotes/${counter}`
+    `https://rickandmortyapi.com/api/character/${counter}`
   );
 
-  console.log({ data, isLoading, error });
+  const { name, species } = !!data && data;
 
-  const { author, quote } = !!data && data[0];
-
+  // const {a} = false 
+  // console.log('a', a)
+    
   return (
     <>
       <div className="title">
@@ -24,7 +25,7 @@ export const MultipleCustomHooks = () => {
         <div className="alert alert-danger text-center">{error.message}</div>
       )}
 
-      {data && <Quote quote={quote} author={author} />}
+      {data && <Quote quote={species} author={name} />}
 
       <button
         onClick={() => decrement(1, 1)}

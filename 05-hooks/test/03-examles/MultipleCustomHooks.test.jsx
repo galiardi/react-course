@@ -1,4 +1,4 @@
-import { fireEvent, render, renderHook, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { MultipleCustomHooks } from '../../src/03-examples';
 import { useFetch } from '../../src/custom-hooks/useFetch';
 import { useCounter } from '../../src/custom-hooks/useCounter';
@@ -29,7 +29,6 @@ describe('Testing 03-examples/MultipleCustomHooks', () => {
     });
     
     render( <MultipleCustomHooks />);
-    screen.debug();
     expect(screen.getByText('loading...'));
     expect(screen.getByText('Multiple Custom Hooks'));
 
@@ -41,13 +40,13 @@ describe('Testing 03-examples/MultipleCustomHooks', () => {
    test('debe mostrar un quote', () => {
 
      useFetch.mockReturnValue({
-      data: [{author: 'Pablo', quote: 'hola mundo'}],
+      data: {name: 'Pablo', species: 'hola mundo'},
       isLoading: false,
       hasError: null
      })
      
      render( <MultipleCustomHooks />);
-
+     screen.debug();
      expect(screen.getByText('hola mundo'));
      expect(screen.getByText('Pablo'));
      
@@ -60,7 +59,7 @@ describe('Testing 03-examples/MultipleCustomHooks', () => {
    test('debe llamar incrementar', () => {
 
      useFetch.mockReturnValue({
-      data: [{author: 'Pablo', quote: 'hola mundo'}],
+      data: [{name: 'Pablo', species: 'hola mundo'}],
       isLoading: false,
       hasError: null
      })

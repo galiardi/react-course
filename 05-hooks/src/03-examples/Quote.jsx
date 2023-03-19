@@ -4,8 +4,10 @@ export const Quote = ({ quote, author }) => {
   const [boxSize, setBoxSize] = useState({ height: 0, width: 0 });
 
   const pRef = useRef();
+  console.log(pRef);
 
   useLayoutEffect(() => {
+    console.log(pRef);
     const { height, width } = pRef.current.getBoundingClientRect();
     setBoxSize({ height, width });
   }, [quote]);
