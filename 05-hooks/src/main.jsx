@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import { RouterProvider } from 'react-router-dom';
-import { MultipleCustomHooks } from "./03-examples";
+import { BrowserRouter} from 'react-router-dom';
+import { MainAppLegacy } from './09-useContext/MainAppLegacy';
+// import { MainApp } from "./09-useContext/MainApp";
 // import { router } from './09-useContext/router'
 
 import "./index.css";
@@ -9,7 +11,11 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-      <MultipleCustomHooks />
+    {/* <RouterProvider router={router}> */}
+    <BrowserRouter>
+      <MainAppLegacy />    
+    </BrowserRouter>
+    {/* </RouterProvider> */}
   </React.StrictMode>
 );
 
